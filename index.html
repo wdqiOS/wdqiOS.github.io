@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+
+  <title>VoxHub Live-Streaming Center | Los Angeles</title>
+  <link rel="icon" href="/assets/favicon-Bbbz_mqo.ico" type="image/x-icon" />
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+
+  <style>
+    /* --- Scroll Reveal --- */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .reveal.visible {
+      animation: fadeUp .8s both;
+    }
+
+    /* --- Typewriter --- */
+    .typewrite>span {
+      border-right: .08em solid #fff;
+      animation: caret 1s steps(1) infinite;
+    }
+
+    @keyframes caret {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/index-C9dS0PmB.css">
+</head>
+
+<body class="antialiased text-gray-800 scroll-smooth">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/70 shadow-sm backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <img src="/assets/logo-DKz_qchv.jpg" class="w-12 rounded-md" alt="">
+      <!-- <nav class="hidden gap-8 md:flex">
+        <a href="#home" class="font-black underline">Home</a>
+        <a href="#about" class="font-black">About</a>
+        <a href="#locations" class="font-black">Locations</a>
+        <a href="#contact" class="font-black">Contact</a>
+      </nav> -->
+      <a id="joinBtn"
+        class="px-4 py-2 bg-gray-200 rounded-full font-black">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- 角色选择弹窗 -->
+<div id="roleModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black-30">
+  <div class="relative rounded-lg bg-white p-8 shadow-xl max-w-md md:w-full">
+    <h3 class="mb-6 text-2xl font-bold text-gray-800">Select Your Role</h3>
+    
+    <div class="space-y-4">
+      <button onclick="selectRole('business')" class="w-full rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white hover:bg-blue-700 transition">
+        Business
+      </button>
+      
+      <button onclick="selectRole('influencer')" class="w-full rounded-lg bg-purple-600 px-6 py-3 text-lg font-semibold text-white hover:bg-purple-700 transition">
+        Influencer
+      </button>
+    </div>
+    
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+
+  <!-- HERO -->
+  <section id="top" class="relative flex min-h-screen items-center justify-center bg-gray-900">
+    <img loading="lazy" src="/assets/1-CDLyb3FN.jpg" alt="studio bg"
+      class="absolute inset-0 h-full w-full object-cover opacity-40" />
+    <div class="relative z-10 mx-auto max-w-5xl text-center text-white">
+      <h1 class="mb-6 text-4xl font-extrabold sm:text-6xl typewrite"
+        data-words='["Go Live.","Sell Live.","Create Live."]'><span></span></h1>
+      <p class="mb-3 text-4xl font-extrabold sm:text-6xl typewrite">
+        VoxHub Live-Streaming Center
+      </p>
+      <p class="mx-auto mb-8 reveal">
+        A cutting-edge hub designed to deliver high-quality, real-time content to global audiences
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="mx-auto max-w-5xl px-6 py-20">
+    <div class="mb-10 text-center reveal">
+      <h2 class="text-3xl font-bold">Who We Are</h2>
+      <p class="mt-4 text-gray-600">
+        VoxHub is a cutting-edge live-streaming hub in Los Angeles, purpose-built to deliver
+        high-quality, real-time content to global audiences. With professional production
+        facilities and 20&#43; platform distribution, we make “going live” effortless.
+      </p>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2">
+      <div class="rounded-lg bg-gray-50 p-8 shadow reveal">
+        <h3 class="mb-3 text-xl font-semibold text-indigo-600">Mission</h3>
+        <p>Amplify every voice with broadcast-grade quality, interactive storytelling, and scalable technology—so ideas
+          travel farther, faster.</p>
+      </div>
+      <div class="rounded-lg bg-gray-50 p-8 shadow reveal">
+        <h3 class="mb-3 text-xl font-semibold text-indigo-600">What Makes Us Different</h3>
+        <ul class="list-disc space-y-2 pl-5">
+          <li>20&#43; simultaneous platform delivery</li>
+          <li>XR LED wall &amp; virtual sets</li>
+          <li>In-house creative &amp; technical crew</li>
+          <li>End-to-end production, from concept to analytics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="bg-gray-100 py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <h2 class="mb-10 text-center text-3xl font-bold reveal">Core Services</h2>
+      <div class="grid gap-10 md:grid-cols-2">
+        <!-- cards -->
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">1</span>
+          <div>
+            <h3 class="font-semibold">Multi-Platform Production</h3>
+            <p>Broadcast simultaneously to TikTok, YouTube, Twitch, and more—up to 4K.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">2</span>
+          <div>
+            <h3 class="font-semibold">Event & Product Launches</h3>
+            <p>Reveal new products with studio lighting, dynamic graphics, and remote guest support.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">3</span>
+          <div>
+            <h3 class="font-semibold">Live Commerce</h3>
+            <p>Drive real-time sales with shoppable links and conversion analytics.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">4</span>
+          <div>
+            <h3 class="font-semibold">Webinars & Virtual Conferences</h3>
+            <p>Deliver keynotes and Q&As that feel anything but "virtual."</p>
+          </div>
+        </div>
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">5</span>
+          <div>
+            <h3 class="font-semibold">Full Creative Direction</h3>
+            <p>Scripting, talent coaching, set design—handled start to finish.</p>
+          </div>
+        </div>
+        <div class="flex gap-5 reveal">
+          <span
+            class="h-12 w-12 shrink-0 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold">6</span>
+          <div>
+            <h3 class="font-semibold">Post-Show Analytics</h3>
+            <p>Clear, actionable data on reach, watch-time, and revenue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section id="facilities" class="mx-auto max-w-5xl px-6 py-20">
+    <h2 class="mb-10 text-center text-3xl font-bold reveal">Inside Our Center</h2>
+    <div class="grid gap-12 md:grid-cols-2">
+      <div class="space-y-4 reveal">
+        <img loading="lazy" src="/assets/2-AH10AzFb.jpg" alt="XR Stage" class="rounded-lg shadow" />
+        <h3 class="text-xl font-semibold">XR LED Stage</h3>
+        <p>Step into an immersive, change-on-the-fly backdrop—perfect for cinematic reveals and hybrid events.</p>
+      </div>
+      <div class="space-y-4 reveal">
+        <img loading="lazy" src="/assets/3-wDXDGqQV.jpg" alt="Gaming Center" class="rounded-lg shadow" />
+        <h3 class="text-xl font-semibold">Esports &amp; Gaming Arena</h3>
+        <p>Low-latency feeds, high-refresh monitors, and spectator-ready seating.</p>
+      </div>
+      <div class="space-y-4 reveal">
+        <img loading="lazy" src="/assets/4-BXJYJfvU.jpg" alt="Makeup Room" class="rounded-lg shadow" />
+        <h3 class="text-xl font-semibold">Makeup &amp; Green Room</h3>
+        <p>Professional styling stations to keep talent camera-ready.</p>
+      </div>
+      <div class="space-y-4 reveal">
+        <img loading="lazy" src="/assets/5-ClHgbt1Z.jpg" alt="Multi-purpose" class="rounded-lg shadow" />
+        <h3 class="text-xl font-semibold">Multi-Purpose Studios</h3>
+        <p>Modular spaces for talk shows, podcasts, or product photography.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY / PLACEHOLDER AREA -->
+  <section id="gallery" class="bg-gray-100 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="mb-10 text-center text-3xl font-bold reveal">Creator Spotlight Gallery</h2>
+      <p class="mx-auto mb-12 max-w-2xl text-center text-gray-600 reveal">
+        See what creators are building at VoxHub. Each image showcases real productions from our studios.
+      </p>
+
+      <div class="gallery grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/6-DXp6ZnAe.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/7-BFiYIcSY.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/8-BvJpgmW7.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/9-CSyaUfxT.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/10-Bo01nmkG.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+        <div class="group relative overflow-hidden rounded-lg shadow reveal">
+          <img loading="lazy" src="/assets/11-B-wNisMS.jpg" alt="placeholder"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <span
+            class="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作方 -->
+  <section id="partner" class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="mb-10 text-center text-3xl font-bold reveal">Partner</h2>
+    <div class="grid gap-x-5 md:gap-x-0 gap-y-10 grid-cols-3 md:grid-cols-6 max-w-screen-lg m-auto">
+      <div class="space-y-4 reveal">
+        <a href="https://www.tiktok.com/about" target="_blank"
+          class="group relative overflow-hidden rounded-lg reveal flex justify-center">
+          <img loading="lazy" src="/assets/tiktok-DrNa7wsg.webp" alt="Gaming Center"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-lg shadow partner-img" />
+        </a>
+      </div>
+      <div class="space-y-4 reveal">
+        <a href="https://x.com/" target="_blank"
+          class="group relative overflow-hidden rounded-lg reveal flex justify-center">
+          <img loading="lazy" src="/assets/twitter-B6_IAduw.webp" alt="Multi-purpose"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-lg shadow partner-img" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative isolate overflow-hidden bg-gray-900 py-20 text-white">
+    <img src="/assets/14-0hXK60n3.jpg" loading="lazy" alt="control room"
+      class="absolute inset-0 h-full w-full object-fill opacity-30" />
+    <div class="relative mx-auto max-w-4xl px-6 text-center reveal">
+      <h2 class="mb-6 text-3xl font-bold">Ready to Press "Go Live"?</h2>
+      <p class="mb-8 text-lg">Tour the center or request a custom package today.</p>
+      <a id="getStartBtn"
+        class="inline-block rounded bg-indigo-600 px-10 py-4 font-semibold hover:bg-indigo-700">Get Started</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-5xl px-6 py-20">
+    <h2 class="mb-6 text-center text-3xl font-bold reveal">Contact Us</h2>
+    <div class="mx-auto max-w-xl space-y-6 text-center reveal">
+      <p>VoxHub Live-Streaming Center<br />17560 Rowland St, City of Industry, CA 91748</p>
+      <p><a href="mailto:Info@voxhuby.com" class="text-indigo-600 hover:underline">Info@voxhuby.com</a><br /></p>
+      <div class="flex justify-center gap-4">
+        <a href="#" class="hover:text-indigo-600">Twitter</a>
+        <a href="#" class="hover:text-indigo-600">TikTok</a>
+        <a href="#" class="hover:text-indigo-600">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
+    © 2025 VoxHub Live-Streaming Center. All rights reserved.
+  </footer>
+
+  <script>
+    // 获取DOM元素
+    const joinBtn = document.getElementById('joinBtn');
+    const getStartBtn = document.getElementById('getStartBtn');
+    const roleModal = document.getElementById('roleModal');
+    const body = document.body;
+    
+    // Contact Us打开弹窗
+    joinBtn.addEventListener('click', () => {
+      roleModal.classList.remove('hidden');
+      roleModal.classList.add('flex');
+      body.classList.add('overflow-hidden'); // 禁止页面滚动  
+    });
+
+    // getStartBtn点击事件
+    getStartBtn.addEventListener('click', () => {
+      roleModal.classList.remove('hidden'); // 显示弹窗
+      roleModal.classList.add('flex'); // 显示弹窗   
+      body.classList.add('overflow-hidden'); // 禁止页面滚动   
+    });
+    
+    // 关闭弹窗
+    function closeModal() {
+      roleModal.classList.remove('flex');
+      roleModal.classList.add('hidden');
+      body.classList.remove('overflow-hidden'); // 恢复页面滚动
+    }
+    
+    // 选择角色并跳转
+    function selectRole(role) {
+      closeModal();
+      
+      // 根据角色设置不同的跳转链接
+      let redirectUrl;
+      if (role === 'business') {
+        redirectUrl = 'https://forms.gle/KQBw9AV6fXHrVvWi6'; // 替换为企业注册链接
+      } else if (role === 'influencer') {
+        redirectUrl = 'https://forms.gle/UVe3rBvGA2NeMqUp7'; // 替换为网红注册链接
+      }
+      
+      // 跳转到相应页面
+      // window.location.href = redirectUrl;
+      // 在新标签页中打开链接
+      window.open(redirectUrl, '_blank');
+
+    }
+  </script>
+
+  <!-- SCRIPTS -->
+  <script>
+    /* ---- Scroll-Reveal Observer ---- */
+    document.addEventListener("DOMContentLoaded", () => {
+      const IO = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); IO.unobserve(e.target); } }),
+        { threshold: .12 }
+      );
+      document.querySelectorAll(".reveal").forEach(el => IO.observe(el));
+
+      /* ---- Typewriter ---- */
+      class TypeWriter {
+        constructor(el) { this.el = el; this.words = JSON.parse(el.dataset.words); this.txt = ""; this.wordIndex = 0; this.isDeleting = false; this.type(); }
+        type() {
+          const current = this.wordIndex % this.words.length, full = this.words[current];
+          this.txt = this.isDeleting ? full.substring(0, this.txt.length - 1) : full.substring(0, this.txt.length + 1);
+          this.el.querySelector("span").textContent = this.txt;
+          let speed = this.isDeleting ? 50 : 120;
+          if (!this.isDeleting && this.txt === full) { speed = 2000; this.isDeleting = true; }
+          else if (this.isDeleting && this.txt === "") { this.isDeleting = false; this.wordIndex++; speed = 400; }
+          setTimeout(() => this.type(), speed);
+        }
+      }
+      if (document.querySelector(".typewrite")) {
+        document.querySelectorAll(".typewrite").forEach(el => new TypeWriter(el));
+      }
+      // document.querySelectorAll(".typewrite").forEach(el => new TypeWriter(el));
+    });
+  </script>
+  <script>window.parent.postMessage({ action: "ready" }, "*");
+
+    window.console = new Proxy(console, {
+      get(target, prop) {
+        if (['log', 'warn', 'error'].includes(prop)) {
+          return new Proxy(target[prop], {
+            apply(fn, thisArg, args) {
+              fn.apply(thisArg, args);
+              window.parent.postMessage({
+                action: 'console',
+                type: prop,
+                args: args.map((arg) => {
+                  try {
+                    return JSON.stringify(arg).replace(/^["']|["']$/g, '');
+                  } catch (e) {
+                    return arg;
+                  }
+                })
+              }, '*');
+            }
+          });
+        }
+        return target[prop];
+      }
+    });
+  </script>
+  <script>
+    // 禁用页面的右键菜单
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    }, false);
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.key === 'U')) {
+        event.preventDefault();
+        // alert('快捷键被禁用！');
+        // 重定向到官方网站
+        // window.location.href = 'https://www.voxhuby.com';
+      }
+    });
+
+    // 防止调试器被打开
+    (function () {
+      'use strict';
+
+      function antiDebugger() {
+        const threshold = 160;
+        const time = new Date().getTime();
+
+        debugger;
+
+        if (new Date().getTime() - time > threshold) {
+          // alert('检测到调试器被打开！');
+          // 可以添加其他逻辑，比如重定向
+          window.location.href = 'https://www.voxhuby.com';
+        }
+      }
+
+      setInterval(antiDebugger, 1000);
+    })();
+
+  </script>
+</body>
+
+</html>
